@@ -3,6 +3,7 @@ import { Navbar } from './components/ui/Navbar';
 import { Footer } from './components/ui/Footer';
 import { HomePage } from './pages/HomePage';
 import { DownloadPage } from './pages/DownloadPage';
+import { NotFoundPage } from './pages/NotFoundPage';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/download" element={<DownloadPage />} />
+            <Route path="*" element={<NotFoundPage />} />
           </Routes>
         </main>
 
