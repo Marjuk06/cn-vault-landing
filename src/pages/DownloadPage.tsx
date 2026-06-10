@@ -140,6 +140,23 @@ export const DownloadPage = () => {
                       </a>
                     </div>
                   </div>
+                ) : primaryOS === 'windows' ? (
+                  <div className="flex flex-col items-center md:items-end gap-3 w-full md:w-auto shrink-0 mt-2">
+                    <a href="https://apps.microsoft.com/detail/9p888nv4qrls?referrer=appbadge&mode=full" target="_blank" rel="noreferrer" className="hover:scale-105 transition-transform block rounded-lg overflow-hidden shadow-[0_0_30px_rgba(255,255,255,0.1)]">
+                      <img src="https://get.microsoft.com/images/en-us%20dark.svg" alt="Get it from Microsoft" className="w-[200px] h-auto block" />
+                    </a>
+                    <div className="flex flex-col sm:flex-row items-center gap-2 w-full mt-1">
+                      {primaryRelease.downloads.map((dl, idx) => (
+                        <a key={idx} href={dl.url} className="w-full sm:w-auto px-4 py-2 bg-white/10 border border-white/10 text-white/80 font-medium rounded-lg hover:bg-white/20 transition-colors flex items-center justify-center gap-2 text-sm">
+                          <Download className="w-4 h-4" />
+                          {dl.format}
+                        </a>
+                      ))}
+                    </div>
+                    <div className="text-xs text-white/30 font-mono mt-1">
+                      Released {currentRelease.releaseDate}
+                    </div>
+                  </div>
                 ) : recommendedDownload ? (
                   <>
                     <a
@@ -208,6 +225,13 @@ export const DownloadPage = () => {
                   <h4 className="text-lg font-bold mb-1">{release.name}</h4>
                   {os === 'linux' ? (
                     <div className="text-sm text-cyan-400/80 font-mono select-all">sudo snap install cn-vault</div>
+                  ) : os === 'windows' ? (
+                    <div className="flex flex-col gap-2 mt-2">
+                      <a href="https://apps.microsoft.com/detail/9p888nv4qrls?referrer=appbadge&mode=full" target="_blank" rel="noreferrer" className="block hover:scale-[1.02] transition-transform origin-left">
+                        <img src="https://get.microsoft.com/images/en-us%20dark.svg" alt="Get it from Microsoft" className="h-[32px] w-auto" />
+                      </a>
+                      {dl && <div className="text-sm text-white/50 mt-1">{dl.format} • {dl.size}</div>}
+                    </div>
                   ) : release.notSupportedMessage ? (
                     <div className="text-sm text-white/40">Coming Soon</div>
                   ) : dl && (
