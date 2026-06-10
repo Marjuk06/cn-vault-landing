@@ -1,8 +1,13 @@
 import { motion } from 'framer-motion';
 import { GitBranch, Download } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { detectPlatform } from '../utils/detectPlatform';
+import { currentRelease } from '../data/release';
 
 export const HeroSection = () => {
+  const { os } = detectPlatform();
+  const platformName = os ? currentRelease.platforms[os].name : 'Windows';
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
       <div className="relative z-10 max-w-5xl mx-auto px-6 text-center">
@@ -45,7 +50,7 @@ export const HeroSection = () => {
             className="w-full sm:w-auto px-8 py-4 rounded-full bg-white text-black font-semibold text-lg flex items-center justify-center gap-2 hover:scale-105 transition-transform"
           >
             <Download className="w-5 h-5" />
-            <span>Download for Linux</span>
+            <span>Download for {platformName}</span>
           </Link>
           <a
             href="https://github.com/Marjuk06/CN-Vault"
