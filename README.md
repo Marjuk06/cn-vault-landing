@@ -213,6 +213,14 @@ npm run tauri build
 2. Ensure all tests pass (`cargo test`) before submitting PRs.
 3. Do not introduce cloud dependencies or external network calls.
 
+## Author
+
+**Marjuk Amin** (@Marjuk06)
+- 🌐 [Website](https://marjukcreates.org/)
+- 💻 [GitHub](https://github.com/Marjuk06)
+
+*This project (CN Vault) is entirely designed, engineered, and maintained by Marjuk Amin.*
+
 ---
 
 ## License

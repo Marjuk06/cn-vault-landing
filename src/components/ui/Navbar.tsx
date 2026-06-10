@@ -25,12 +25,14 @@ export const Navbar = () => {
               <a href="#features" className="hover:text-white transition-colors">Features</a>
               <a href="#security" className="hover:text-white transition-colors">Security</a>
               <a href="#performance" className="hover:text-white transition-colors">Performance</a>
+              <Link to="/about" className="hover:text-white transition-colors">About</Link>
             </>
           ) : (
             <>
               <Link to="/#features" className="hover:text-white transition-colors">Features</Link>
               <Link to="/#security" className="hover:text-white transition-colors">Security</Link>
               <Link to="/#performance" className="hover:text-white transition-colors">Performance</Link>
+              <Link to="/about" className="hover:text-white transition-colors">About</Link>
             </>
           )}
         </nav>
