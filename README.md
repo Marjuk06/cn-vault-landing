@@ -38,19 +38,19 @@ Alternatively, download the automated `.msix` installer from the **Releases** pa
 
 | Unlock Screen | Dashboard |
 | :---: | :---: |
-| <img src="vault-app/src/sss/locscreen.png" width="400" /> | <img src="vault-app/src/sss/dashboard.png" width="400" /> |
+| <img src="landingpage/src/sss/locscreen.png" width="400" /> | <img src="vault-app/src/sss/dashboard.png" width="400" /> |
 
 | Add New Entry | Password Generator |
 | :---: | :---: |
-| <img src="vault-app/src/sss/newentry.png" width="400" /> | <img src="vault-app/src/sss/passgenertor.png" width="400" /> |
+| <img src="landingpage/src/sss/newentry.png" width="400" /> | <img src="vault-app/src/sss/passgenertor.png" width="400" /> |
 
 | Settings (Profile) | Settings (Security) |
 | :---: | :---: |
-| <img src="vault-app/src/sss/settings_profile.png" width="400" /> | <img src="vault-app/src/sss/settings_security.png" width="400" /> |
+| <img src="landingpage/src/sss/settings_profile.png" width="400" /> | <img src="landingpage/src/sss/settings_security.png" width="400" /> |
 
 <div align="center">
   <b>Settings (Backup & Restore)</b><br>
-  <img src="vault-app/src/sss/settings_backup.png" width="400" />
+  <img src="landingpage/src/sss/settings_backup.png" width="400" />
 </div>
 
 ---
