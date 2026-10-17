@@ -4,6 +4,7 @@ import { PillarsSection } from '../sections/PillarsSection';
 import { ArchitectureSection } from '../sections/ArchitectureSection';
 import { FeaturesSection } from '../sections/FeaturesSection';
 import { PerformanceSection } from '../sections/PerformanceSection';
+import { CommercialSection } from '../sections/CommercialSection';
 import { GallerySection } from '../sections/GallerySection';
 import { RoadmapSection } from '../sections/RoadmapSection';
 import { OpenSourceSection } from '../sections/OpenSourceSection';
@@ -18,6 +19,7 @@ export const HomePage = () => {
       <ArchitectureSection />
       <FeaturesSection />
       <PerformanceSection />
+      <CommercialSection />
       <GallerySection />
       <RoadmapSection />
       <OpenSourceSection />

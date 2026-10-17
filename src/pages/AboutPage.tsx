@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { GitBranch, Globe, MapPin, User as UserIcon, Code2, Database, Shield, Layout, Blocks } from 'lucide-react';
+import { GitBranch, Globe, MapPin, Mail, Code2, Database, Shield, Layout, Blocks } from 'lucide-react';
 import { GlassCard } from '../components/ui/GlassCard';
 
 export const AboutPage = () => {
@@ -52,11 +52,11 @@ export const AboutPage = () => {
                 </div>
                 <div className="flex items-center gap-3 text-sm text-white/50">
                   <Globe className="w-4 h-4 text-violet-400" />
-                  <a href="https://marjukcreates.org/" target="_blank" rel="noreferrer" className="hover:text-white transition-colors">marjukcreates.org</a>
+                  <a href="https://www.marjukamin.com/" target="_blank" rel="noreferrer" className="hover:text-white transition-colors">marjukamin.com</a>
                 </div>
                 <div className="flex items-center gap-3 text-sm text-white/50">
-                  <UserIcon className="w-4 h-4 text-violet-400" />
-                  <span>Available for hire</span>
+                  <Mail className="w-4 h-4 text-violet-400" />
+                  <a href="mailto:marjukamin06@gmail.com" className="hover:text-white transition-colors">marjukamin06@gmail.com</a>
                 </div>
               </div>
             </div>

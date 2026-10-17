@@ -36,10 +36,10 @@ export const OpenSourceSection = () => {
                   Clone your new fork to your local machine and install the dependencies:
                 </p>
                 <div className="ml-7 bg-[#0A0A0A] border border-white/10 rounded-lg p-4 font-mono text-sm text-violet-300 overflow-x-auto whitespace-nowrap">
-                  git clone https://github.com/YOUR-USERNAME/CN-Vault.git<br/>
-                  cd CN-Vault<br/>
+                  git clone https://github.com/Marjuk06/CN-Vault.git<br/>
+                  cd CN-Vault/vault-app<br/>
                   npm install<br/>
-                  npm run dev
+                  npm run tauri dev
                 </div>
               </div>
             </div>

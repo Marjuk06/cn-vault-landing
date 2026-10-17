@@ -4,8 +4,8 @@ export type PlatformOS = 'linux' | 'windows' | 'macos';
 export interface DownloadLink {
   url: string;
   size: string;
-  checksum: string; // SHA256
-  format: string; // e.g. AppImage, exe, dmg
+  checksum: string; // SHA256 or verification source
+  format: string; // e.g. MSI, MSIX, Snap, exe
   arch: Architecture;
 }
 
@@ -22,25 +22,25 @@ export interface ReleaseInfo {
   platforms: Record<PlatformOS, PlatformRelease>;
   changelog: string[];
   stats: {
-    downloads: string;
+    status: string;
     lastUpdated: string;
   };
 }
 
 export const currentRelease: ReleaseInfo = {
-  version: "1.0.0",
-  releaseDate: "June 9, 2026",
+  version: "1.0.1",
+  releaseDate: "July 24, 2026",
   stats: {
-    downloads: "12,450+",
-    lastUpdated: "June 9, 2026",
+    status: "Active Production",
+    lastUpdated: "July 2026",
   },
   changelog: [
-    "Secure Local Backups",
-    "Advanced Password Generator",
-    "Custom Categories & Tags",
-    "AES-256-GCM Encryption",
-    "Argon2id Key Derivation",
-    "Auto-lock & Timeout Settings"
+    "Security dependency hardening and vulnerability patches",
+    "Local-first encrypted SQLite database (AES-256-GCM + Argon2id)",
+    "Secure local backups with PRAGMA integrity verification",
+    "Entropy-scoring password generator",
+    "Custom categories (Logins, Email, API Keys, Recovery Codes, Notes)",
+    "Memory zeroization & auto-lock inactivity timers"
   ],
   platforms: {
     linux: {
@@ -49,8 +49,8 @@ export const currentRelease: ReleaseInfo = {
       downloads: [
         {
           url: "https://snapcraft.io/cn-vault",
-          size: "Snap",
-          checksum: "Managed by Snap",
+          size: "Snap package",
+          checksum: "Verified by Canonical Snapcraft",
           format: "Snap Store",
           arch: "x64"
         }
@@ -61,17 +61,24 @@ export const currentRelease: ReleaseInfo = {
       name: 'Windows',
       downloads: [
         {
-          url: "https://github.com/Marjuk06/CN-Vault/releases/download/v1.0.0/CN-Vault-Setup.exe",
-          size: "Installer",
-          checksum: "Verify on GitHub",
-          format: ".exe Installer",
+          url: "https://apps.microsoft.com/detail/9p888nv4qrls?referrer=appbadge&mode=full",
+          size: "Store App",
+          checksum: "Verified by Microsoft Store",
+          format: "Microsoft Store",
+          arch: "x64"
+        },
+        {
+          url: "https://github.com/Marjuk06/CN-Vault/releases/download/v1.0.1/CN.Vault_0.1.0_x64_en-US.msi",
+          size: "7.7 MB",
+          checksum: "f31f5ca34bd7d2d5d5ff3c524f1147a2a27c5c460e59e2022fb3e795bbc854f9",
+          format: ".msi Installer",
           arch: "x64"
         },
         {
           url: "https://github.com/Marjuk06/CN-Vault/releases/download/v1.0.0/CN-Vault.msix",
-          size: "Appx",
-          checksum: "Verify on GitHub",
-          format: ".msix Installer",
+          size: "7.7 MB",
+          checksum: "509a3748b8ea4dcf490735685d0bdeb0e908479a148698534b38974c9342e4d3",
+          format: ".msix Package",
           arch: "x64"
         }
       ]
@@ -79,7 +86,7 @@ export const currentRelease: ReleaseInfo = {
     macos: {
       os: 'macos',
       name: 'macOS',
-      notSupportedMessage: "macOS is currently not supported. We will release the Mac version in an upcoming update.",
+      notSupportedMessage: "macOS is currently not supported. Support is planned in an upcoming release.",
       downloads: []
     }
   }

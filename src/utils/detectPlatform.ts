@@ -40,11 +40,10 @@ export const detectPlatform = (): DetectedPlatform => {
   }
 
   // Check for User-Agent Client Hints if available (Chromium-based browsers)
-  // @ts-ignore
-  if (navigator.userAgentData && navigator.userAgentData.getHighEntropyValues) {
-    // @ts-ignore
-    navigator.userAgentData.getHighEntropyValues(['architecture']).then(ua => {
-      if (ua.architecture === 'arm') {
+  const nav = navigator as unknown as { userAgentData?: { getHighEntropyValues?: (hints: string[]) => Promise<{ architecture?: string }> } };
+  if (nav.userAgentData?.getHighEntropyValues) {
+    nav.userAgentData.getHighEntropyValues(['architecture']).then(ua => {
+      if (ua?.architecture === 'arm') {
         arch = 'arm64';
       }
     });

@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { 
   Download, 
@@ -13,12 +13,7 @@ import { detectPlatform, type DetectedPlatform } from '../utils/detectPlatform';
 import { GlassCard } from '../components/ui/GlassCard';
 
 export const DownloadPage = () => {
-  const [platform, setPlatform] = useState<DetectedPlatform>({ os: null, arch: 'x64' });
-
-  useEffect(() => {
-    // Detect on mount
-    setPlatform(detectPlatform());
-  }, []);
+  const [platform] = useState<DetectedPlatform>(() => detectPlatform());
 
   // Default to windows if detection fails
   const primaryOS: PlatformOS = platform.os || 'windows';
@@ -252,8 +247,8 @@ export const DownloadPage = () => {
             
             <div className="pt-6 border-t border-white/5 grid grid-cols-2 gap-4">
               <div>
-                <div className="text-xs text-white/40 mb-1 uppercase tracking-wider">Downloads</div>
-                <div className="text-lg font-semibold">{currentRelease.stats.downloads}</div>
+                <div className="text-xs text-white/40 mb-1 uppercase tracking-wider">Release Status</div>
+                <div className="text-lg font-semibold text-emerald-400">{currentRelease.stats.status}</div>
               </div>
               <div>
                 <div className="text-xs text-white/40 mb-1 uppercase tracking-wider">Last Updated</div>
